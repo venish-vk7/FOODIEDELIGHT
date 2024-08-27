@@ -1,0 +1,156 @@
+@import "../../variable.scss";
+
+.dashboard-container {
+  .nav-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    button {
+      margin-right: 20px;
+      background-color: $appThemecolor;
+      font-size: 12px;
+      font-family: cursive;
+      font-weight: bold;
+    }
+  }
+
+  .section {
+    .card-container {
+      .card-list {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .restaurant-card {
+          width: auto;
+          font-family: cursive;
+          margin-left: 15px;
+          margin-right: 15px;
+          margin-bottom: 20px;
+          background: #f9f9f9;
+          background-color: rgb(255, 255, 255);
+          border: 1px solid rgba(2, 6, 12, 0.15);
+          border-radius: 20px;
+
+          .card-body {
+            padding: 15px;
+            .restaurant-name {
+              font-size: 24px;
+              text-transform: capitalize;
+              margin-bottom: 0;
+              font-weight: bold;
+              letter-spacing: 0.7px;
+              font-family: cursive;
+              color: $appThemecolor;
+            }
+
+            .icon-container {
+              display: flex;
+
+              .mat-icon {
+                color: $appThemecolor;
+                margin-right: 5px;
+              }
+            }
+          }
+
+          .card-footer {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+
+            button {
+              background-color: $appThemecolor;
+              border-radius: 50%;
+              font-weight: bold;
+              margin-left: 15px;
+            }
+          }
+
+          img {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .dashboard-container {
+    .nav-container {
+      justify-content: center !important;
+    }
+
+    .card-container {
+      .card-list {
+        width: 90% !important;
+        margin: 0 auto !important;
+
+        .restaurant-card {
+          width: 100% !important;
+          min-width: 250px;
+          max-width: 330px;
+
+          .card-head {
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .dashboard-container {
+    .card-container {
+      .restaurant-card {
+        flex: 1 !important;
+        min-width: 250px;
+        max-width: 330px;
+
+        .card-head {
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .dashboard-container {
+    .card-container {
+      .restaurant-card {
+        flex: 1 !important;
+        min-width: 250px;
+        max-width: 330px;
+
+        .card-head {
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

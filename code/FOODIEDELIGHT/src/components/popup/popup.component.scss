@@ -1,0 +1,26 @@
+@import "../../variable.scss";
+
+.popup-container {
+  .add-title {
+    font-family: cursive;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: $appThemecolor;
+  }
+
+  .app-border {
+    border: 2px solid $appThemecolor;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+
+  button {
+    background-color: $appThemecolor;
+    color: #fff;
+    font-size: 12px;
+    font-family: cursive;
+    font-weight: bold;
+  }
+}

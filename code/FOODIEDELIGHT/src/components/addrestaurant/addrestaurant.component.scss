@@ -1,0 +1,24 @@
+@import "../../variable.scss";
+
+.form-container {
+  .restaruant-form {
+    .restaruant-form-input {
+      width: 100%;
+    }
+
+    mat-label {
+      font-size: 12px;
+      text-transform: capitalize;
+      color: #000;
+    }
+
+    input, textArea {
+      font-size: 12px;
+    }
+
+    input::placeholder,
+    textArea::placeholder {
+      font-size: 12px;
+    }
+  }
+}

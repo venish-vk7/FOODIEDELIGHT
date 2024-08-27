@@ -1,0 +1,78 @@
+<div class="dashboard-container">
+  <div class="nav-container">
+    <button mat-flat-button (click)="addrestaurant()">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="add_circle"
+      ></mat-icon>
+
+      Add Restaurent
+    </button>
+  </div>
+  <div class="section">
+    <div class="card-container">
+      <div class="card-list">
+        <div class="restaurant-card" *ngFor="let data of restaurentList">
+          <div class="card-head">
+            <img src="assets/images/foodImage.jpg" alt="restaruant image" />
+          </div>
+          <div class="card-body">
+            <h3 class="restaurant-name">{{ data.name }}</h3>
+            <p>{{ data.description }}</p>
+            <p class="icon-container">
+              <span>
+                <mat-icon
+                  aria-hidden="false"
+                  aria-label="Example home icon"
+                  fontIcon="smartphone"
+                ></mat-icon>
+              </span>
+              <span> +91 {{ data.phone }} </span>
+            </p>
+            <p class="icon-container">
+              <span>
+                <mat-icon
+                  aria-hidden="false"
+                  aria-label="Example home icon"
+                  fontIcon="email"
+                ></mat-icon>
+              </span>
+              <span>
+                {{ data.email }}
+              </span>
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="btn-container">
+              <button mat-fab (click)="viewRestaurant(data)">
+                <mat-icon
+                  aria-hidden="false"
+                  aria-label="Example home icon"
+                  fontIcon="visibility"
+                ></mat-icon>
+              </button>
+              <button mat-fab (click)="editRestaurant(data)">
+                <mat-icon
+                  aria-hidden="false"
+                  aria-label="Example home icon"
+                  fontIcon="edit"
+                ></mat-icon>
+              </button>
+              <button mat-fab (click)="deleteRestaurant(data)">
+                <mat-icon
+                  aria-hidden="false"
+                  aria-label="Example home icon"
+                  fontIcon="delete"
+                ></mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="restaruant-empty-ui" *ngIf="restaurentList.length === 0">
+          Please add some restaurents
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="restaurant-container">
+  <div class="nav">
+    <h3 class="resturant-title">{{ restaurantData && restaurantData.name }}</h3>
+    <p class="resturant-info">Information</p>
+    <hr class="info-line" />
+    <div class="restaurent-bg">
+      <img src="assets/images/banner.webp" alt="image" />
+      <div class="restaurant-info-card">
+        <div class="restaruant-info-card-header">
+          <div class="rating">
+            <img
+              src="assets/images/star.svg"
+              alt="star"
+              style="width: 20px; height: 20px"
+            />
+            &nbsp;
+            <p>4.3 for 5 from Google • ₹1400 for Two</p>
+          </div>
+          <p class="location-info">Location : India</p>
+          <p class="open-staus-container">
+            <span class="open-status">CLOSED</span>
+            <span class="open-status">•</span>
+            <span>OPENS at 7PM</span>
+          </p>
+          <p class="description">
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="description"
+            ></mat-icon>
+            {{ restaurantData && restaurantData.description }}
+          </p>
+        </div>
+        <div class="restaruant-info-card-footer">
+          <p class="footer-info">
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="call"
+            ></mat-icon>
+            {{ restaurantData && restaurantData.phone }}
+          </p>
+          <p class="footer-info">
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="email"
+            ></mat-icon>
+            {{ restaurantData && restaurantData.email }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section"></div>
+</div>

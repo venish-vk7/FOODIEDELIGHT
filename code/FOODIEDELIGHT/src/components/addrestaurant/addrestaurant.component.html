@@ -1,0 +1,24 @@
+<div class="form-container">
+  <form [formGroup]="restaurantForm" class="restaruant-form">
+    <mat-form-field class="restaruant-form-input">
+      <mat-label>restaurant Name</mat-label>
+      <input matInput placeholder="Ex. Pizza" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field class="restaruant-form-input">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..." formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="restaruant-form-input">
+      <mat-label>Phone</mat-label>
+      <span matTextPrefix>+91 &nbsp;</span>
+      <input type="tel" matInput placeholder="908-8765-123" formControlName="phone" >
+    </mat-form-field>
+
+    <mat-form-field class="restaruant-form-input">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email">
+    </mat-form-field>
+  </form>
+</div>

@@ -1,0 +1,23 @@
+<div class="popup-container">
+  <h2 mat-dialog-title class="add-title">
+    {{ restaurantData ? "Edit Restaurent" : "Add restaurant" }}
+    <hr class="app-border"/>
+  </h2>
+
+  <mat-dialog-content class="mat-typography">
+    <app-addrestaurant [restaurantForm]="restaurantForm" />
+  </mat-dialog-content>
+  <mat-dialog-actions align="center">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button
+      mat-button
+      [mat-dialog-close]="true"
+      cdkFocusInitial
+      (click)="restaurantData ? editRestaurant() : addrestaurant()"
+    >
+      {{ restaurantData ? "Edit" : "Add" }}
+    </button>
+
+  </mat-dialog-actions>
+
+</div>

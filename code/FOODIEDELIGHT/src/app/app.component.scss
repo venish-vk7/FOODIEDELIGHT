@@ -1,0 +1,63 @@
+.app-container {
+  width: 80%;
+  margin: 0 auto;
+  background: #f9f9f9;
+  padding: 32px 32px 32px 32px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(2, 6, 12, 0.15);
+  border-radius: 20px;
+  margin-top: 50px;
+
+  .nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .nav-left {
+      flex: 1;
+      img {
+        width: 217px;
+        height: 78px;
+      }
+    }
+  }
+
+  .app-border {
+    border: 2px solid #ffaa76;
+    border-radius: 10px;
+  }
+
+  .mobile_logo {
+    display: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .app-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+
+    .nav-left {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .web_logo {
+      display: none;
+    }
+
+    .mobile_logo {
+      display: block;
+      width: 100px !important;
+      height: 100px !important;
+    }
+  }
+}
