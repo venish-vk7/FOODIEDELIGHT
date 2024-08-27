@@ -11,7 +11,7 @@ import {
   MatDialogModule,
   MatDialogRef,
 } from '@angular/material/dialog';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AddrestaurantComponent } from '../addrestaurant/addrestaurant.component';
 import {
   RestaurantAPIResponse,
@@ -29,10 +29,10 @@ import {
 export class PopupComponent implements OnInit {
   readonly dialog = inject(MatDialogRef);
   restaurantForm = new FormGroup<RestaurantForm>({
-    name: new FormControl(''),
-    description: new FormControl(''),
-    phone: new FormControl(''),
-    email: new FormControl(''),
+    name: new FormControl('', [Validators.required]),
+    description: new FormControl('', [Validators.required]),
+    phone: new FormControl('', [Validators.required, Validators.pattern('[- +()0-9]{10}')]),
+    email: new FormControl('', [Validators.required, Validators.email ]),
   });
   public restaurantData: RestaurantAPIResponse = inject(MAT_DIALOG_DATA);
 
@@ -43,6 +43,11 @@ export class PopupComponent implements OnInit {
       phone: this.restaurantData?.phone || '',
       email: this.restaurantData?.email || '',
     });
+  }
+
+  get restaurentFormControl() {
+    console.log(this.restaurantForm.valid);
+    return this.restaurantForm;
   }
 
   addrestaurant() {

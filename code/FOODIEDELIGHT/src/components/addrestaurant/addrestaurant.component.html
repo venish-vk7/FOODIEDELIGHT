@@ -2,23 +2,55 @@
   <form [formGroup]="restaurantForm" class="restaruant-form">
     <mat-form-field class="restaruant-form-input">
       <mat-label>restaurant Name</mat-label>
-      <input matInput placeholder="Ex. Pizza" formControlName="name">
+      <input matInput placeholder="Ex. Pizza" formControlName="name" />
+      @if (restaurentFormControl.name.hasError('required')) {
+      <mat-error>Name is required</mat-error>
+      }
     </mat-form-field>
 
     <mat-form-field class="restaruant-form-input">
       <mat-label>Description</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..." formControlName="description"></textarea>
+      <textarea
+        matInput
+        placeholder="Ex. It makes me feel..."
+        formControlName="description"
+      ></textarea>
+      @if (restaurentFormControl.description.hasError('required')) {
+      <mat-error>Description is required</mat-error>
+      }
     </mat-form-field>
 
     <mat-form-field class="restaruant-form-input">
       <mat-label>Phone</mat-label>
       <span matTextPrefix>+91 &nbsp;</span>
-      <input type="tel" matInput placeholder="908-8765-123" formControlName="phone" >
+      <input
+        type="tel"
+        matInput
+        placeholder="908-8765-123"
+        formControlName="phone"
+      />
+      @if (restaurentFormControl.phone.hasError('required')) {
+      <mat-error>PhoneNumber is required</mat-error>
+      }
+      @if (restaurentFormControl.phone.hasError('pattern')) {
+      <mat-error>Please Enter Valid PhoneNumber</mat-error>
+      }
     </mat-form-field>
 
     <mat-form-field class="restaruant-form-input">
       <mat-label>Email</mat-label>
-      <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email">
+      <input
+        type="email"
+        matInput
+        placeholder="Ex. pat@example.com"
+        formControlName="email"
+      />
+      @if (restaurentFormControl.email.hasError('required')) {
+      <mat-error>Email is required</mat-error>
+      }
+      @if (restaurentFormControl.email.hasError('email')) {
+      <mat-error>Please Enter Valid Email</mat-error>
+      }
     </mat-form-field>
   </form>
 </div>
